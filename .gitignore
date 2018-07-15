@@ -1,3 +1,9 @@
+# AWS
+.aws
+
+# Serverless
+.serverless
+
 # Logs
 logs
 *.log

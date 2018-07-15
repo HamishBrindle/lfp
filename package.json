@@ -1,0 +1,31 @@
+{
+  "name": "lfp",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "sls offline start --dontPrintOutput",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lookingforproject/lfp.git"
+  },
+  "keywords": [],
+  "author": "LFP Contributors",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/lookingforproject/lfp/issues"
+  },
+  "homepage": "https://github.com/lookingforproject/lfp#readme",
+  "devDependencies": {
+    "serverless-dynamodb-local": "^0.2.30",
+    "serverless-offline": "^3.25.6"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.275.1",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "morgan": "^1.9.0",
+    "serverless-http": "^1.6.0"
+  }
+}
