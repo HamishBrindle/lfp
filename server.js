@@ -4,9 +4,6 @@ var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var mongoose = require('mongoose').set('debug', true);
 
-// Models
-var User = require('./models/User');
-
 var app = express();
 
 // TODO: move stuff to .env
