@@ -29,7 +29,10 @@ db_test.once('open', function() {
   console.log('db connection success');
 });
 
-app.use(require('./routes/user'));
+app.use(require('./routes/comments'));
+app.use(require('./routes/links'));
+app.use(require('./routes/projects'));
+app.use(require('./routes/users'));
 
 app.get('/api/', (req, res) => {
   res.send({
