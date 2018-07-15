@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 
 var User = require('../models/User');
+var User = require('../models/Link');
 
 var projectSchema = new mongoose.Schema({
   name: {
@@ -13,6 +14,10 @@ var projectSchema = new mongoose.Schema({
     ref: 'User',
     required: true
   },
+  links: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Link'
+  }],
   created: Date
 });
 
