@@ -1,14 +1,10 @@
 var express = require('express');
-var session = require('express-session');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
-var mongoose = require('mongoose').set('debug', true);
-var dotenv = require('dotenv').config()
+
+require('./database');
 
 var app = express();
-
-var db_url = process.env.DB_URL;
-var port = process.env.PORT || 8080;
 
 app.use(express.static('public'));
 
@@ -18,17 +14,6 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(morgan('dev'));
-
-// database connection
-var db = mongoose.connect(db_url, {
-  useNewUrlParser: true
-});
-
-var db_test = mongoose.connection;
-db_test.on('error', console.error.bind(console, 'connection error:'));
-db_test.once('open', function() {
-  console.log('db connection success');
-});
 
 app.use(require('./routes/comments'));
 app.use(require('./routes/links'));
@@ -42,4 +27,4 @@ app.get('/api/', (req, res) => {
   });
 });
 
-app.listen(port);
+app.listen(process.env.PORT);
