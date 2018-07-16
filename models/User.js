@@ -1,17 +1,17 @@
 var mongoose = require('mongoose');
 
 var userSchema = new mongoose.Schema({
-  username: {
+  github_id: {
     type: String,
     required: true,
     unique: true
   },
-  password: { // TODO: auth somehow
+  bio: {
     type: String,
     required: true
   },
   created: Date,
-  logins: Number,
+  logins: Number
 });
 
 userSchema.pre('save', (next) => {
