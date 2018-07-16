@@ -36,7 +36,8 @@ app.use(require('./routes/users'));
 
 app.get('/api/', (req, res) => {
   res.send({
-    express: 'LFP'
+    express: 'LFP',
+    message: 'Hey, Mac'
   });
 });
 
