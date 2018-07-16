@@ -20,6 +20,7 @@ router.post('/api/users', (req, res) => {
   var user = new User({
     github_id: req.body.github_id,
     bio: req.body.bio,
+    type: "normal", // defaults to "normal", TODO: admins should be able to appoint admins
     logins: 0
   });
   user.save(err => {
