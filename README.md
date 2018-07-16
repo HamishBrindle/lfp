@@ -2,7 +2,7 @@
 A platform for like-minded developers to connect and share ideas on Open Source projects!
 
 ## Contributing
-See [CONTRIBUTING.md](#)
+See [CONTRIBUTING.md](https://github.com/lookingforproject/lfp/blob/develop/.github/CONTRIBUTING.md)
 
 ## Developing
 This section of the document explains how to run the project locally for development and testing purposes. 
