@@ -10,6 +10,10 @@ var userSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  type: { // Not making this a boolean in case we want to add moderators or other permission levels later
+    type: String, // normal or admin
+    required: true
+  },
   created: Date,
   logins: Number
 });
