@@ -5,7 +5,7 @@ var userSchema = new mongoose.Schema({
   _id: {
     type: String,
     default: shortid.generate,
-    retries: 4  // Four retries on collision
+    retries: 4 // Because we auto-gen, gotta confirm no collisions
   },
   github_id: {
     type: String,
