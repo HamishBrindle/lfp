@@ -1,11 +1,123 @@
 {
 	"info": {
+		"_postman_id": "56d36a2f-a09a-4f32-af54-35c2f63b85aa",
 		"name": "LFP",
-		"_postman_id": "70e2d984-7163-1973-8ad9-acb71107b745",
 		"description": "LFP API.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
+		{
+			"name": "Auth",
+			"description": "",
+			"item": [
+				{
+					"name": "Register - Email/Pass",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "user001",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "userEmail@gmail.com",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Password101",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "password_confirm",
+									"value": "Password101",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "admin",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"register"
+							]
+						},
+						"description": "Register a new user with email/password."
+					},
+					"response": []
+				},
+				{
+					"name": "Login - Email/Pass",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "userEmail@gmail.com",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Password101",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						},
+						"description": "Register a new user with email/password."
+					},
+					"response": []
+				}
+			]
+		},
 		{
 			"name": "Create User",
 			"request": {
@@ -22,13 +134,11 @@
 						{
 							"key": "github_id",
 							"value": "ffffasdfasdf",
-							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "bio",
 							"value": "afagtqwer",
-							"description": "",
 							"type": "text"
 						}
 					]
@@ -44,8 +154,7 @@
 						"api",
 						"users"
 					]
-				},
-				"description": ""
+				}
 			},
 			"response": []
 		},
@@ -65,19 +174,16 @@
 						{
 							"key": "name",
 							"value": "unique2",
-							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "creator",
 							"value": "asdf",
-							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "links",
 							"value": "test",
-							"description": "",
 							"type": "text"
 						}
 					]
@@ -93,8 +199,7 @@
 						"api",
 						"projects"
 					]
-				},
-				"description": ""
+				}
 			},
 			"response": []
 		},
@@ -114,13 +219,11 @@
 						{
 							"key": "site",
 							"value": "github",
-							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "path",
 							"value": "facebook/react",
-							"description": "",
 							"type": "text"
 						}
 					]
@@ -136,8 +239,7 @@
 						"api",
 						"links"
 					]
-				},
-				"description": ""
+				}
 			},
 			"response": []
 		},
@@ -157,13 +259,11 @@
 						{
 							"key": "message",
 							"value": "yeet",
-							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "creator",
 							"value": "5b32dc3891d82c7bde8c8c3f",
-							"description": "",
 							"type": "text"
 						}
 					]
@@ -179,8 +279,7 @@
 						"api",
 						"comments"
 					]
-				},
-				"description": ""
+				}
 			},
 			"response": []
 		}
