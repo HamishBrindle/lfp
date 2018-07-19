@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { addProject, callApi } from '../redux/actions'
+import { addProject, callApi } from '../../redux/actions'
 
-import '../styles/Landing.css'
+import './style.css'
 
 // import PropTypes from 'prop-types'
 

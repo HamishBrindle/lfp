@@ -1,14 +1,35 @@
 var mongoose = require('mongoose');
+var shortid = require('shortid');
 
 var userSchema = new mongoose.Schema({
+  _id: {
+    type: String,
+    default: shortid.generate,
+    retries: 4 // Because we auto-gen, gotta confirm no collisions
+  },
   github_id: {
     type: String,
-    required: true,
+    required: false,
     unique: true
+  },
+  name: {
+    type: String,
+    required: true
+  },
+  email: {
+    type: String,
+    required: true
+  },
+  password: {
+    type: String,
+    required: true
+  },
+  avatar: {
+    type: String
   },
   bio: {
     type: String,
-    required: true
+    required: false
   },
   type: { // Not making this a boolean in case we want to add moderators or other permission levels later
     type: String, // normal or admin

@@ -1,12 +1,15 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var morgan = require('morgan');
+const express = require('express');
+const bodyParser = require('body-parser');
+const morgan = require('morgan');
+const passport = require('passport');
+
+const users = require('./routes/users'); 
 
 require('./database');
 
 var app = express();
-
-app.use(express.static('public'));
+app.use(passport.initialize());
+require('./auth/passport')(passport);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -15,16 +18,23 @@ app.use(bodyParser.urlencoded({
 
 app.use(morgan('dev'));
 
-app.use(require('./routes/comments'));
-app.use(require('./routes/links'));
-app.use(require('./routes/projects'));
-app.use(require('./routes/users'));
+// app.use(require('./routes/comments'));
+// app.use(require('./routes/links'));
+// app.use(require('./routes/projects'));
+
+app.use('/api/users', users);
 
 app.get('/api/', (req, res) => {
   res.send({
     express: 'LFP',
     message: 'Hey, Mac'
   });
-});
+}); 
 
-app.listen(process.env.PORT);
+const PORT = process.env.PORT || 5050;
+
+app.listen(PORT, () => {
+  console.log(
+    `🔮  SERVER: http://localhost:${PORT} | 💻  CLIENT: http://localhost:3000`
+  );
+});
