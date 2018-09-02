@@ -1,41 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './scenes/App';
+import './styles/main.css'
+
+import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
 
-import { BrowserRouter } from 'react-router-dom';
-
-// Redux Stuff
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware, compose } from 'redux';
-import createSagaMiddleware from 'redux-saga';
-import reducers from './redux/reducers';
-
-import rootSaga from './redux/sagas';
-
-const sagaMiddleware = createSagaMiddleware();
-
-// Our redux store object
-const store = createStore(
-    reducers,
-    compose(
-      applyMiddleware(sagaMiddleware), 
-      window.devToolsExtension ? window.devToolsExtension() : f => f
-    )
-);
-
-sagaMiddleware.run(
-    rootSaga
-);
+import store from './redux/store';
 
 ReactDOM.render(
     <Provider store={store}>
-        <BrowserRouter>
-            <App />
-        </BrowserRouter>
+        <App />
     </Provider>,
-    document.getElementById('root')
-);
+    document.getElementById('root'));
 
 registerServiceWorker();

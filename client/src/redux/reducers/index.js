@@ -1,13 +1,10 @@
-import { combineReducers } from 'redux'
-import projects from './projects'
-import test from './test'
+import { combineReducers } from 'redux';
+import sessionReducer from './session';
+import userReducer from './user';
 
-/**
- * Reducers need to be combined into one for Redux to process them
- */
-const reducers = combineReducers({
-    projects,
-    test
-  });
-  
-  export default reducers
+const rootReducer = combineReducers({
+  sessionState: sessionReducer,
+  userState: userReducer,
+});
+
+export default rootReducer;
